@@ -130,7 +130,7 @@ Replace the uboot
 	- For Ubuntu, See more [Install tftp info][Install tftp]
 
 	```bash
-		sudo atp-get install tftpd-hpa 
+		sudo apt-get install tftpd-hpa 
 		sudo service tftpd-hpa 
 		cp bin/ramips/openwrt-ramips-rt305x-hlk-rm04-squashfs-sysupgrade.bin /var/lib/tftpboot/	
 	```
