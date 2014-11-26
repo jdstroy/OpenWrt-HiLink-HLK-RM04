@@ -150,6 +150,22 @@ Replace the uboot
 	```
 1. Wait flashing finished, then you can use Openwrt on HLK-RM04. 
 
+### De-bricking
+
+If you've not overwritten the UBoot bootloader, but you've bricked the rest of the firmware, you can de-brick the system through UBoot:
+
+1. Download the necessary files to de-brick. The firmware in image/hlk-rm04-16m-luci-ser2net-usb2serial-r38025.bin (this repository) should work.  You will also need a TFTP server.  See above section for Linux.  For Windows, get Tftpd32.
+1. Attach your HLK-RM04's LAN port to an ethernet switch.
+1. Attach your PC to the same ethernet switch.
+1. Set your PC's IP address to 10.10.10.3
+1. Set Tftpd32 up as a TFTP Server.  You do not need to run a DHCP server.
+1. Copy the firmware image that you wish to use into the TFTP root directory as `tim_uImage`.
+1. Hold the WPS switch on the HLK-RM04.  If you have the bare module, look at the reference design schematic to find the WPS switch.
+1. Press and release the Reset switch on the HLK-RM04.
+1. Release the WPS switch on the HLK-RM04.
+1. Watch Tftpd32 transfer `tim_uImage` (the firmware) to the device.  Wait five minutes after it completes.
+1. Reset the HLK-RM04.
+
 ## About Patch
 
 ### openwrt-add-support-for-hilink-hlk-rm04.patch
